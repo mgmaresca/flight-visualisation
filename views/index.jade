@@ -1,0 +1,55 @@
+Doctype html
+  head
+    title Flight Path Visualisation
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(href='/stylesheets/images/style.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/ammap/ammap.css', type='text/css', media='all')
+    script(src='https://www.amcharts.com/lib/3/ammap.js')
+    script(src='https://www.amcharts.com/lib/3/maps/js/worldLow.js')
+    script(src='/javascripts/myMaptest.js', type='text/javascript')
+    script(type='text/javascript', src='/javascripts/setForm.js')
+  body(onload='setSelect();', bgcolor='#FFFFFF')
+    div
+      header
+        img.logo(src='https://www.vu.nl/nl/Images/VUlogo_NL_Wit_HR_RGB_tcm289-201376.png')
+    div
+      h1.title
+        | FLIGHT PATH VISUALISATION 
+        br
+        br
+      h3.subtitle Vrije Universiteit Amsterdam
+      h3.subtitle
+        | Large Scale Data Engineering 2016-2017 
+        br
+        br
+    .form
+      form(method='')
+        table
+          tr
+            th.b(colspan='2') 1. Choose the origin of the flight
+            th.b(colspan='2') 2. Choose a day
+            th(colspan='2') 3. Choose the time
+          tr
+            td.right-side
+              label(for='departure') Departure from
+            td.left-side-b
+              select#departure(name='departure')
+                option(value='all') Show all
+            td.right-side
+              label(for='departure-date') Departure date
+            td.left-side-b
+              input#departure-date(type='date', name='departure-date')
+            td.right-side
+              label(for='departure-time') Departure time
+            td.left-side
+              select#departure-time(name='departure-time')
+                option(value='mo') Morning
+                option(value='af') Afternoon
+                option(value='ev') Evening
+                option(value='ni') Night
+                option(value='al') All day
+          tr
+            td.button-submit(colspan='6')
+              input.display-flight(type='submit', value='Display flights')
+    br
+    #mapdiv.map

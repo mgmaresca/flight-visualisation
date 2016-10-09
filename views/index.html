@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+	<title>Flight Path Visualisation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link href="../public/stylesheets/images/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../public/stylesheets/ammap/ammap.css" type="text/css" media="all" />
+
+	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+	<script src="../public/javascript/myMaptest.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="../public/javascript/setForm.js"></script>
+
+</head>
+
+<body onload="setSelect();" bgcolor="#FFFFFF">
+	
+	<div>
+		<header>
+			<img class="logo" src="https://www.vu.nl/nl/Images/VUlogo_NL_Wit_HR_RGB_tcm289-201376.png">
+
+		</header>
+	</div>
+	
+	<div>
+		<h1 class="title"> FLIGHT PATH VISUALISATION <br><br></h1>
+
+		<h3 class="subtitle">Vrije Universiteit Amsterdam</h3>
+		<h3 class="subtitle">Large Scale Data Engineering 2016-2017 <br><br></h3>
+	</div>
+
+	<div class="form">
+		<form method="">
+			<table>
+				<tr>
+					<th class="b" colspan="2">Choose the origin of the flight</th>
+					<th class="b" colspan="2">Choose a day</th>
+					<th colspan="2">Choose the time</th>
+				</tr>
+
+				<tr>
+					<td class="right-side">
+						<label  for="departure">Departure from</label>
+					</td>
+					<td class="left-side-b">
+						<select name="departure" id="departure">
+							<option value="all">Show all</option>
+						</select>
+						</td>
+
+						<td class="right-side">
+							<label  for="departure-date">Departure date</label>
+						</td>
+						<td class="left-side-b">
+							<input type="date" name="departure-date" id="departure-date">
+						</td>
+
+						<td class="right-side">
+							<label  for="departure-time">Departure time</label>
+						</td>
+						<td class="left-side">
+							<select name="departure-time" id="departure-time">
+								<option value = "mo">Morning</option>
+								<option value = "af">Afternoon</option>
+								<option value = "ev">Evening</option>
+								<option value = "ni">Night</option>
+								<option value = "al">All day</option>
+							</select>
+						</td>
+					</tr>
+
+						<tr>
+							<td colspan="6" class="button-submit">
+								<input type="submit" class="display-flight"value="Display flights">
+							</td>
+						</tr>
+
+					</table>
+				</form>
+			</div>
+			<br>
+			<div class="map" id="mapdiv"></div>
+
+		</body>
+		</html>
+
